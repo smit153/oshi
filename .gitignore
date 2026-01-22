@@ -1,0 +1,31 @@
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Fresh build directory
+_fresh/
+# npm dependencies
+node_modules/
+
+# Deno kv local database
+.sqlite/
+
+# Screenshots
+screenshots/
+
+# Solve cache and tuning reports — regenerable from the puzzle files
+scoring/
+
+# E2E
+test-results/
+
+# Generated manifest file for puzzles
+static/puzzles/manifest.json
+static/generate-worker.js
+static/solver-worker.js
+
+# OS cruft
+.DS_Store
