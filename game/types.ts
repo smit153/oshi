@@ -1,0 +1,125 @@
+// Cardinal direction for piece movement
+export type Direction = "up" | "right" | "down" | "left";
+
+// A coordinate on the board grid
+export type Position = {
+  x: number;
+  y: number;
+};
+
+// A game piece (puck or blocker) placed on the board
+export type Piece = Position & {
+  type: "puck" | "blocker";
+};
+
+// A wall segment that blocks piece movement
+export type Wall = Position & {
+  orientation: "horizontal" | "vertical";
+};
+
+// A hole swallows any piece that slides into it. A portal teleports one to its
+// pair. Neither ever moves, so they are positions rather than Piece variants.
+export type Hazard = "hole" | "portal";
+
+// Everything that can occupy a cell, in the order the editor cycles through
+// them. One list so the cycle and the toolbar can never drift apart.
+export const CELL_CONTENTS = ["blocker", "puck", "hole", "portal"] as const;
+export type CellContent = typeof CELL_CONTENTS[number];
+
+// The complete board state with destination, walls, pieces and hazards
+export type Board = {
+  // Absent while a board is being built: the editor can hold an incomplete
+  // draft, the same way it can hold one with no puck yet.
+  destination?: Position;
+  walls: Wall[];
+  pieces: Piece[];
+  holes: Position[];
+  // 0 or 2 once valid; the editor may hold 1 mid-build
+  portals: Position[];
+};
+
+// "ultra" is a one-off tier for "Loke" — the hidden endgame puzzle shown
+// when a player has solved every other puzzle at minimum moves.
+export const DIFFICULTIES = ["easy", "medium", "hard", "ultra"] as const;
+export type Difficulty = typeof DIFFICULTIES[number];
+
+export type SkillLevel = "beginner" | "intermediate" | "expert";
+
+// A move as [from, to], plus the portal it went in by when the slide teleported.
+export type Move = [Position, Position, Position?];
+
+// A complete puzzle with metadata and board configuration
+export type Puzzle = {
+  number?: number;
+  slug: string;
+  name: string;
+  board: Board;
+  createdAt: Date;
+  difficulty: Difficulty;
+  minMoves: number;
+  onboardingLevel?: number;
+  hidden?: boolean;
+};
+
+// A tile's kind, from the sketchbook's own shorthand. Derived from contents:
+// hazards decide P/X/Z, and an unhazarded tile is A or B by how open it is.
+export const TILE_CATEGORIES = ["A", "B", "P", "X", "Z"] as const;
+export type TileCategory = typeof TILE_CATEGORIES[number];
+
+// A quarter-turn count, clockwise.
+export type Rotation = 0 | 1 | 2 | 3;
+
+// A 4x4 board fragment. Structurally a board, but never holds a puck or a
+// destination — those are rolled onto the composed board, not authored here.
+export type Tile = Board;
+
+// A tile as stored in the catalog.
+export type TileEntry = {
+  id: string;
+  name?: string;
+  category: TileCategory;
+  tile: Tile;
+};
+
+// How one dealt tile ended up on the board, kept as provenance.
+export type TilePlacement = {
+  id: string;
+  rotation: Rotation;
+  flipped?: boolean;
+};
+
+// Lightweight puzzle entry used in the manifest index
+export type PuzzleManifestEntry = Pick<
+  Puzzle,
+  | "number"
+  | "slug"
+  | "name"
+  | "createdAt"
+  | "minMoves"
+  | "difficulty"
+  | "onboardingLevel"
+  | "hidden"
+>;
+
+// Tracks current pagination position and total counts
+export type PaginationState = {
+  page: number;
+  totalItems: number;
+  totalPages: number;
+  itemsPerPage: number;
+};
+
+// A paginated response containing items and pagination metadata
+export type PaginatedData<T> = {
+  items: T[];
+  pagination: PaginationState;
+};
+
+// Aggregate stats for a puzzle, maintained as best-effort alongside solution writes
+export type PuzzleStats = {
+  totalSolutions: number;
+  solutionsHistogram: Record<number, number>; // moveCount → frequency
+  firstSolvedAt?: string; // ISO date, set on first solve
+  uniqueSolvers: number; // deduplicated by userId; anon sessions counted separately
+  hintUsageCount: number;
+};
