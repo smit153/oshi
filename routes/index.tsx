@@ -1,0 +1,206 @@
+import clsx from "clsx/lite";
+import { HttpError, page } from "fresh";
+
+import { Header } from "#/components/header.tsx";
+import {
+  ArrowRight,
+  ChalkboardTeacher,
+  GithubLogo,
+  Icon,
+  LinkedinLogo,
+} from "#/components/icons.tsx";
+import { Main } from "#/components/main.tsx";
+import { Panel } from "#/components/panel.tsx";
+import { PuzzleCard } from "#/components/puzzle-card.tsx";
+import { StatsSummary } from "#/components/stats-summary.tsx";
+import { define } from "#/core.ts";
+import { getBestMoves, listUserSolutions } from "#/db/solutions.ts";
+import { getUserStats } from "#/db/stats.ts";
+import { getTodaysPuzzle } from "#/game/loader.ts";
+import { pickRecommendedPuzzle } from "#/game/recommendation.ts";
+import type { UserStats } from "#/game/streak.ts";
+import type { Puzzle } from "#/game/types.ts";
+import { withSpan } from "#/lib/tracing.ts";
+
+type PageData = {
+  dailyPuzzle: Puzzle;
+  recommendedPuzzle: Puzzle;
+  bestMoves: Record<string, number>;
+  userStats: UserStats | null;
+};
+
+export const handler = define.handlers<PageData>({
+  async GET(ctx) {
+    const { user } = ctx.state;
+
+    const [dailyPuzzle, solutions] = await Promise.all([
+      getTodaysPuzzle(),
+      withSpan(
+        "home.solutions",
+        (span) =>
+          listUserSolutions(ctx.state.userId, { limit: "max" }).then(
+            (result) => {
+              span.setAttribute("solutions.count", result.length);
+              return result;
+            },
+          ),
+      ),
+    ]);
+
+    if (!dailyPuzzle) throw new HttpError(500, "Unable to get daily puzzle");
+
+    const bestMoves = getBestMoves(solutions);
+    const recommendedPuzzle = await pickRecommendedPuzzle(user, solutions);
+    const userStats = await getUserStats(ctx.state.userId, solutions);
+
+    return page({
+      dailyPuzzle,
+      recommendedPuzzle,
+      bestMoves,
+      userStats: userStats.totalSolves > 0 ? userStats : null,
+    });
+  },
+});
+
+export default define.page<typeof handler>(function Home(ctx) {
+  const url = new URL(ctx.req.url);
+
+  const {
+    dailyPuzzle,
+    recommendedPuzzle,
+    bestMoves,
+    userStats,
+  } = ctx.data;
+  const { user } = ctx.state;
+
+  return (
+    <>
+      <Main className="max-lg:row-span-full items-stretch place-content-stretch">
+        <Header url={url} share />
+
+        <div className="flex flex-col">
+          <h1 className="text-8 leading-tight text-brand flex items-baseline gap-fl-1">
+            <span>
+              Oshi
+            </span>
+            <span className="text-1 text-text-3">
+              押し · [oɕi]
+            </span>
+          </h1>
+
+          <p className="text-text-2">
+            Slide the puck to the target.<br />Fewest moves wins.
+          </p>
+        </div>
+
+        <div className="grid gap-fl-2">
+          <ul className="grid grid-cols-[repeat(2,1fr)] gap-fl-3 gap-y-fl-4 list-none pl-0">
+            <li className="list-none pl-0 min-w-0">
+              <PuzzleCard
+                puzzle={dailyPuzzle}
+                tagline="Daily puzzle"
+                bestMoves={bestMoves[dailyPuzzle.slug]}
+              />
+            </li>
+
+            <li className="list-none pl-0 min-w-0">
+              {user.skillLevel === null && (
+                <a
+                  href="/puzzles/tutorial"
+                  className="flex flex-col gap-2 text-text-1 no-underline"
+                >
+                  <div
+                    className={clsx(
+                      "group flex gap-fl-1 p-fl-3 place-content-center place-items-center",
+                      "text-3 text-text-2 border-2 border-link rounded-1 no-underline",
+                      "aspect-square lg:flex-col lg:gap-fl-1 lg:w-full",
+                      "hover:filter-[lighten(1.3)] hover:no-underline",
+                    )}
+                  >
+                    <span className="flex gap-2 text-6">
+                      <Icon icon={ChalkboardTeacher} />
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <span className="text-1 text-text-2 tracking-wide leading-tight">
+                      New here?
+                    </span>
+                    <span className="text-text-1 text-3 font-semibold leading-flat items-center">
+                      Learn the basics
+                    </span>
+                  </div>
+                </a>
+              )}
+
+              {user.skillLevel && recommendedPuzzle.onboardingLevel && (
+                <PuzzleCard
+                  puzzle={recommendedPuzzle}
+                  tagline={recommendedPuzzle.onboardingLevel === 2
+                    ? "Starter puzzle"
+                    : "Quick puzzle"}
+                />
+              )}
+
+              {user.skillLevel && !recommendedPuzzle.onboardingLevel && (
+                <PuzzleCard
+                  puzzle={recommendedPuzzle}
+                  tagline="Random puzzle"
+                  bestMoves={bestMoves[recommendedPuzzle.slug]}
+                />
+              )}
+            </li>
+          </ul>
+
+          <a href="/puzzles" className="btn place-self-start" data-size="lg">
+            Archives <Icon icon={ArrowRight} />
+          </a>
+        </div>
+      </Main>
+
+      <Panel className="max-lg:gap-fl-3">
+        <p
+          className={clsx(
+            "col-[2/3]",
+            "text-text-1 text-fl-1",
+            "lg:col-auto lg:row-start-1 lg:text-fl-0",
+          )}
+        >
+          Inspired by <br />
+          <a
+            href="https://boardgamegeek.com/boardgame/51/ricochet-robots"
+            className="text-2 text-text-2"
+          >
+            Ricochet Robots
+          </a>
+        </p>
+
+        <div
+          className={clsx(
+            "col-[2/3] flex flex-col gap-fl-3 justify-between items-start text-2 text-text-2",
+            "lg:col-auto lg:row-start-3 lg:justify-between lg:self-stretch",
+          )}
+        >
+          {userStats && (
+            <StatsSummary stats={userStats} className="lg:w-full" />
+          )}
+
+          <div className="flex gap-2 lg:flex-col lg:mt-auto">
+            <a
+              href="https://github.com/smit153"
+              className="flex gap-1 text-text-2"
+            >
+              <Icon icon={GithubLogo} />GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/smit-sojitra/"
+              className="flex gap-1 text-text-2"
+            >
+              <Icon icon={LinkedinLogo} />LinkedIn
+            </a>
+          </div>
+        </div>
+      </Panel>
+    </>
+  );
+});
