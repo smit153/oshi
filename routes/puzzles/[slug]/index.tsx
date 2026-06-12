@@ -1,0 +1,286 @@
+// Puzzle route — renders the board and handles solution submission
+import { trace } from "@opentelemetry/api";
+import { useSignal } from "@preact/signals";
+import clsx from "clsx/lite";
+import { HttpError, page } from "fresh";
+
+import { DifficultyBadge } from "#/components/difficulty-badge.tsx";
+import { Header } from "#/components/header.tsx";
+import { Main } from "#/components/main.tsx";
+import { PrintPanel } from "#/components/print-panel.tsx";
+import { TutorialNudge } from "#/components/tutorial-nudge.tsx";
+import { listUserPuzzleSolutions, saveSolution } from "#/db/solutions.ts";
+import { getPuzzleStats } from "#/db/stats.ts";
+import { setUser } from "#/db/user.ts";
+import { isValidSolution, resolveMoves } from "#/game/board.ts";
+import { getHintCount } from "#/game/cookies.ts";
+import { getTodaysPuzzleNumber, isTodaysPuzzle } from "#/game/date.ts";
+import { assessSkillLevel } from "#/game/skill.ts";
+import { defaultPuzzleStats } from "#/game/stats.ts";
+import { Move, Puzzle } from "#/game/types.ts";
+import { decodeState, getPuzzleArchiveHref } from "#/game/url.ts";
+import { AutoPostSolution } from "#/islands/auto-post-solution.tsx";
+import Board from "#/islands/board.tsx";
+import {
+  type CelebrationData,
+  CelebrationDialog,
+} from "#/islands/celebration-dialog.tsx";
+import { ControlsPanel } from "#/islands/controls-panel.tsx";
+import { HintDialog } from "#/islands/hint-dialog.tsx";
+import { SolutionDialog } from "#/islands/solution-dialog.tsx";
+import { isDev } from "#/lib/env.ts";
+import { withSpan } from "#/lib/tracing.ts";
+import { trackPuzzleSolved, trackSkillLevelUp } from "#/lib/tracking.ts";
+import { define } from "#/routes/puzzles/[slug]/_middleware.ts";
+
+type PageData = {
+  puzzle: Puzzle;
+  hintCount: number;
+  savedName: string | null;
+  hasSolved: boolean;
+  showEdit: boolean;
+};
+
+export const handler = define.handlers<PageData>({
+  async GET(ctx) {
+    const { slug } = ctx.params;
+    const { puzzle } = ctx.state;
+    const savedName = ctx.state.user?.name ?? null;
+
+    const hintCount = getHintCount(ctx.req.headers);
+
+    // Default to false on KV failure — the game itself stays playable; the
+    // worst case is the user temporarily sees "?" on a puzzle they've solved.
+    let hasSolved = false;
+    try {
+      const priorSolutions = await listUserPuzzleSolutions(
+        ctx.state.userId,
+        slug,
+        { limit: 1 },
+      );
+      hasSolved = priorSolutions.length > 0;
+    } catch {
+      hasSolved = false;
+    }
+
+    // No-JS solve detection: moves are encoded in the URL on each navigation.
+    // JS users go via AutoPostSolution → POST instead. The dialog guard prevents
+    // re-processing when the page reloads after a redirect.
+    const { moves } = decodeState(ctx.url);
+    if (moves.length > 0 && !ctx.url.searchParams.get("dialog")) {
+      let board: Puzzle["board"];
+      try {
+        board = resolveMoves(puzzle.board, moves);
+      } catch {
+        const url = new URL(`/puzzles/${slug}`, ctx.url);
+        url.searchParams.set("error", "invalid move");
+        return Response.redirect(url, 303);
+      }
+
+      if (isValidSolution(board)) {
+        const redirectUrl = new URL(ctx.url);
+        redirectUrl.searchParams.set("dialog", "solution");
+        return Response.redirect(redirectUrl, 303);
+      }
+    }
+
+    const showEdit = isDev && (puzzle.number ?? 0) > getTodaysPuzzleNumber();
+    return page({ puzzle, hintCount, savedName, hasSolved, showEdit });
+  },
+  async POST(ctx) {
+    const { slug } = ctx.params;
+    const { puzzle } = ctx.state;
+    const referer = ctx.req.headers.get("referer") ?? "";
+    const isJson = ctx.req.headers.get("content-type")?.includes(
+      "application/json",
+    );
+
+    const { name, moves } = isJson
+      ? await ctx.req.json() as { name: string; moves: Move[] }
+      : await parseSolveForm(ctx.req);
+
+    if (!name) throw new HttpError(400, "Must provide a username");
+
+    if (!isValidSolution(resolveMoves(puzzle.board, moves))) {
+      throw new HttpError(400, "Solution is not valid");
+    }
+
+    const activeSpan = trace.getActiveSpan();
+    activeSpan?.setAttribute("solution.moves", moves.length);
+
+    const [{ isNew, isNewPath }] = await Promise.all([
+      withSpan("puzzle.save_solution", async (span) => {
+        const result = await saveSolution({
+          puzzleSlug: slug,
+          name,
+          moves,
+          userId: ctx.state.userId,
+        });
+        span.setAttribute("solution.is_new", result.isNew);
+        span.setAttribute("solution.is_new_path", result.isNewPath);
+        return result;
+      }),
+      setUser(ctx.state.userId, { name }),
+    ]);
+
+    if (isNew) {
+      trackPuzzleSolved(ctx.state, puzzle, { moves, url: referer });
+
+      const { skillLevel } = ctx.state.user;
+      const newLevel = assessSkillLevel(puzzle, moves, { current: skillLevel });
+
+      if (newLevel && newLevel !== skillLevel) {
+        await setUser(ctx.state.userId, { skillLevel: newLevel });
+        trackSkillLevelUp(ctx.state, puzzle, {
+          moves,
+          url: referer,
+          skillLevel: newLevel,
+        });
+      }
+    }
+
+    if (isJson) {
+      const puzzleStats = await getPuzzleStats(slug);
+      return Response.json({
+        isNewPath,
+        puzzleStats: puzzleStats ?? defaultPuzzleStats,
+      });
+    }
+
+    const solutionsUrl = new URL(`/puzzles/${slug}/solutions`, ctx.url);
+    return Response.redirect(solutionsUrl, 303);
+  },
+});
+
+export default define.page<typeof handler>(function PuzzleDetails(props) {
+  const href = useSignal(props.url.href);
+  const puzzle = useSignal(props.data.puzzle);
+  const mode = useSignal<"solve">("solve");
+  const celebrationData = useSignal<CelebrationData | null>(null);
+  const celebrationError = useSignal(false);
+  const printUrl = props.url.hostname + props.url.pathname;
+
+  const url = new URL(props.req.url);
+
+  const back = isTodaysPuzzle(props.data.puzzle)
+    ? { href: "/", label: "Back to Home" }
+    : {
+      href: getPuzzleArchiveHref(props.data.puzzle) ?? "/",
+      label: "Back to archives",
+    };
+
+  return (
+    <>
+      <Main>
+        <Header url={url} back={{ href: back.href }} share />
+
+        <div className="flex items-center justify-between gap-fl-1 mt-2 flex-wrap">
+          <h1 className="text-6 text-brand leading-tight">
+            {props.data.puzzle.number && (
+              <span className="font-4 tracking-wide">
+                #{props.data.puzzle.number}
+                {" "}
+              </span>
+            )}
+            <span className="font-5">{props.data.puzzle.name}</span>
+          </h1>
+
+          <DifficultyBadge
+            puzzle={puzzle.value}
+            hideMinMoves={!props.data.hasSolved}
+            className="lg:mt-1"
+          />
+        </div>
+
+        <div className="relative">
+          <Board
+            href={href}
+            puzzle={puzzle}
+            mode={mode}
+            isNew={props.state.user.skillLevel === null}
+          />
+
+          {props.state.user.skillLevel === null && (
+            <TutorialNudge
+              className={clsx(
+                "max-lg:max-w-2xs max-lg:place-self-center max-lg:mt-fl-2",
+                "lg:absolute lg:ml-fl-3 lg:left-full lg:top-1/2 lg:-translate-y-1/2",
+                "print:hidden",
+              )}
+            />
+          )}
+        </div>
+      </Main>
+
+      <ControlsPanel
+        puzzle={puzzle}
+        href={href}
+        hintCount={props.data.hintCount}
+        isDev={isDev}
+        showEdit={props.data.showEdit}
+        className="print:hidden"
+      />
+
+      <PrintPanel />
+
+      <a
+        href={`/puzzles/${props.data.puzzle.slug}`}
+        className={clsx(
+          "not-print:hidden",
+          "fixed left-0 top-fl-3 py-fl-2",
+          "[writing-mode:vertical-rl] text-fl-0 rotate-180 font-mono",
+        )}
+      >
+        {printUrl}
+      </a>
+
+      <HintDialog
+        puzzle={puzzle}
+        href={href}
+        hideMinMoves={!props.data.hasSolved}
+      />
+      <SolutionDialog
+        href={href}
+        puzzle={puzzle}
+        savedName={props.data.savedName}
+      />
+
+      {/* Celebration + auto-post are paired: only named users get them */}
+      {props.data.savedName && (
+        <>
+          <CelebrationDialog
+            href={href}
+            puzzle={puzzle}
+            back={back}
+            celebrationData={celebrationData}
+            celebrationError={celebrationError}
+          />
+          <AutoPostSolution
+            href={href}
+            puzzle={puzzle}
+            savedName={props.data.savedName}
+            celebrationData={celebrationData}
+            celebrationError={celebrationError}
+          />
+        </>
+      )}
+    </>
+  );
+});
+
+async function parseSolveForm(
+  req: Request,
+): Promise<{ name: string; moves: Move[] }> {
+  const form = await req.formData();
+  const name = form.get("name")?.toString() ?? "";
+  const rawMoves = form.get("moves")?.toString() ?? "";
+
+  let moves: Move[] = [];
+  try {
+    moves = JSON.parse(rawMoves) as Move[];
+  } catch {
+    throw new HttpError(400, "Invalid moves format");
+  }
+
+  return { name, moves };
+}
