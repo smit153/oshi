@@ -1,0 +1,41 @@
+name: Register deploy preview
+
+on:
+  repository_dispatch:
+    # Fired by Deno Deploy when a preview build is routed and ready
+    types: [deno_deploy.build.routed]
+
+permissions:
+  deployments: write
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_SHA: ${{ github.event.client_payload.revision.git.sha }}
+      DEPLOY_REF: ${{ github.event.client_payload.revision.git.ref }}
+      PREVIEW_URL: ${{ github.event.client_payload.revision.preview_url }}
+
+    steps:
+      - name: Create deployment
+        run: |
+          MSG=$(gh api repos/${{ github.repository }}/commits/$DEPLOY_SHA \
+            --jq '.commit.message | split("\n") | .[0]')
+
+          BODY=$(jq -n \
+            --arg ref "${DEPLOY_REF:-$DEPLOY_SHA}" \
+            --arg desc "$MSG" \
+            '{ref: $ref, environment: "preview", auto_merge: false, required_contexts: [], description: $desc}')
+
+          DEPLOY_ID=$(echo "$BODY" | gh api repos/${{ github.repository }}/deployments \
+            --method POST \
+            --input - \
+            --jq '.id')
+
+          gh api repos/${{ github.repository }}/deployments/$DEPLOY_ID/statuses \
+            --method POST \
+            -f state=success \
+            -f environment_url="$PREVIEW_URL"
+        env:
+          # TODO: Replace PAT with a GitHub App token for tighter scoping
+          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
