@@ -9,13 +9,13 @@
 
 /* ─── Dark themes ──────────────────────────────────────────────── */
 
-/* Oshi (game identity) — ink & sky blue */
+/* Oshi (game identity) — Japanese red & ink */
 :root[data-theme="oshi"] {
   color-scheme: dark;
   --hover-brightness: 1.4;
   --btn-active-text: #f4e9d8;
 
-  --color-brand: #74c0fc;
+  --color-brand: #e0263f;
   --color-link: #e3b23c;
   --color-surface-1: #120f11;
   --color-surface-2: #1b171a;
@@ -30,7 +30,7 @@
   --color-ui-2: #f4e9d8;
   --color-ui-3: #4a5fc1;
   --color-ui-4: #7c9473;
-  --color-ui-contrast: #74c0fc;
+  --color-ui-contrast: #e0263f;
   --color-hole: #08070a;
   --color-portal: #4fd1c5;
   --color-portal-alt: #341421;

@@ -62,6 +62,7 @@
     cursor: pointer;
     color: var(--btn-active-text);
     background-color: var(--color-link);
+    outline-color: var(--color-link);
     text-decoration: none;
   }
 
