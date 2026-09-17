@@ -12,7 +12,7 @@ something.
 
 ## Demo
 
-<video src=".github/assets/demo.mp4" controls></video>
+<video src="https://raw.githubusercontent.com/smit153/oshi/main/.github/assets/demo.mp4" controls></video>
 
 ## Features
 
