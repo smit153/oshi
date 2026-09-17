@@ -84,7 +84,7 @@
   },
   "nodeModulesDir": "auto",
   "deploy": {
-    "org": "smit153",
+    "org": "blue153",
     "app": "oshi"
   }
 }

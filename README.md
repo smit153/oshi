@@ -8,7 +8,7 @@ something.
 
 *Oshi* (押し) means "push" in Japanese.
 
-**[Play it now](https://oshi.smit153.deno.net/)**
+**[Play it now](https://oshi.blue153.deno.net/)**
 
 ## Demo
 
