@@ -2,15 +2,15 @@ import { SolutionPage } from "./solution-page.ts";
 import { expect, setup } from "#/e2e/base.ts";
 import { solvePuzzle } from "#/e2e/helpers.ts";
 
-const moves = await solvePuzzle("karla");
+const moves = await solvePuzzle("lasse");
 
 Deno.test("solution page — shows the puzzle name in the heading", async () => {
   const { page, asUser, addSolution, teardown } = await setup();
   try {
     await asUser({ name: "e2esme" });
-    const solution = await addSolution({ puzzleSlug: "karla", moves });
+    const solution = await addSolution({ puzzleSlug: "lasse", moves });
     const solutionPage = await new SolutionPage(page).goto(
-      "karla",
+      "lasse",
       solution.id,
     );
     await expect(solutionPage.heading).toHaveText(/Karla/);
@@ -23,9 +23,9 @@ Deno.test("solution page — shows who solved it", async () => {
   const { page, asUser, addSolution, teardown } = await setup();
   try {
     await asUser({ name: "e2esme" });
-    const solution = await addSolution({ puzzleSlug: "karla", moves });
+    const solution = await addSolution({ puzzleSlug: "lasse", moves });
     const solutionPage = await new SolutionPage(page).goto(
-      "karla",
+      "lasse",
       solution.id,
     );
     await expect(solutionPage.solvedByText).toBeVisible();
@@ -38,9 +38,9 @@ Deno.test("solution page — plays the replay animation", async () => {
   const { page, asUser, addSolution, teardown } = await setup();
   try {
     await asUser({ name: "e2esme" });
-    const solution = await addSolution({ puzzleSlug: "karla", moves });
+    const solution = await addSolution({ puzzleSlug: "lasse", moves });
     const solutionPage = await new SolutionPage(page).goto(
-      "karla",
+      "lasse",
       solution.id,
     );
     // Board island hydrates in replay mode, injecting @keyframes and applying them to pieces

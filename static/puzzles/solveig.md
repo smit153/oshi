@@ -1,21 +1,21 @@
 ---
 name: Solveig
 slug: solveig
-createdAt: 2026-06-11T20:56:54.128Z
+createdAt: 2026-02-26T15:28:55.716Z
 difficulty: medium
 minMoves: 7
-number: 193
+number: 199
 ---
 
 ```
 + A B C D E F G H +
-1       _         |
-2 #|           |  |
-3   #̲|@   _   _   |
-4                 |
-5 _             _ |
-6       _   X̲   # |
-7       #   #     |
-8                 |
+1 #        |    # |
+2  |   |     |_   |
+3    |_    |   |  |
+4  |   |    @     |
+5     X    |  _|  |
+6  |_  |     |    |
+7    |     |   |  |
+8 #    |        # |
 +-----------------+
 ```

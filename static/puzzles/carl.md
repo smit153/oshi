@@ -1,21 +1,21 @@
 ---
 name: Carl
 slug: carl
-createdAt: 2026-07-25T08:24:14.752Z
-difficulty: easy
-minMoves: 7
-number: 216
+number: 113
+createdAt: 2026-05-23T07:43:01.034Z
+difficulty: medium
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1    |#̲     X̲|    |
-2  |      _    |  |
-3  |   |   |   |  |
-4    |@      |    |
-5    |       |    |
-6  |#  |  #̲|   |  |
-7  |        _  |  |
-8    |      #|    |
+1 _    |    #̲  |  |
+2  |              |
+3   # _        |  |
+4      |  X       |
+5         _ @     |
+6   #        |    |
+7       _         |
+8       #      |  |
 +-----------------+
 ```

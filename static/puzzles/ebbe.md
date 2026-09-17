@@ -1,21 +1,21 @@
 ---
+number: 5
 name: Ebbe
 slug: ebbe
-createdAt: 2026-07-22T19:29:10.294Z
+createdAt: 2026-03-28T21:18:42.722Z
 difficulty: medium
-minMoves: 9
-number: 228
+minMoves: 6
 ---
 
 ```
 + A B C D E F G H +
-1 #|_          |  |
-2                 |
-3                 |
-4        |        |
-5       X|    #   |
-6                 |
-7   _         _   |
-8     @       #|  |
+1   #     #       |
+2 #     #       # |
+3             #   |
+4     X   #       |
+5             #   |
+6 #     #         |
+7     #       # @ |
+8   #     #       |
 +-----------------+
 ```

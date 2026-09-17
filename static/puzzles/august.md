@@ -1,21 +1,21 @@
 ---
-number: 255
+number: 136
 name: August
 slug: august
-createdAt: 2026-09-08T17:54:38.788Z
-difficulty: medium
-minMoves: 9
+createdAt: 2026-02-15T11:34:56.690Z
+difficulty: hard
+minMoves: 10
 ---
 
 ```
 + A B C D E F G H +
-1   _ #   _   #̲   |
-2  |         |    |
-3 @̲ _  |   |_   _ |
-4 P    |  #       |
-5  |  _ P̲      |  |
-6  |       |  X   |
-7     _|  _ #|    |
-8   #          |  |
+1   _   _   #̲     |
+2             #   |
+3      |  _  |    |
+4  |_ _ X     _   |
+5 #   @|     |    |
+6                 |
+7     #           |
+8                 |
 +-----------------+
 ```

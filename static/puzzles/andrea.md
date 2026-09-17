@@ -1,21 +1,21 @@
 ---
-number: 65
 name: Andrea
 slug: andrea
-createdAt: 2026-02-22T19:05:30.265Z
+createdAt: 2026-06-11T20:03:47.104Z
 difficulty: medium
+number: 23
 minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1     _     _ _   |
-2   #          |  |
-3           @  |  |
-4  |    #      |  |
-5     X   #̲       |
-6          |      |
-7  |_ _       #|  |
-8                 |
+1 _|           |_ |
+2     _   X       |
+3   _       # _   |
+4   #  |#|_ _     |
+5   _  | |    _   |
+6     _     @     |
+7 _       #     _ |
+8  |           |  |
 +-----------------+
 ```

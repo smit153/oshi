@@ -1,21 +1,21 @@
 ---
-number: 11
+number: 115
 name: Pelle
 slug: pelle
-createdAt: 2026-02-10T18:46:31.252Z
-difficulty: hard
-minMoves: 13
+createdAt: 2026-03-09T20:59:42.559Z
+difficulty: medium
+minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1   _    |        |
-2     _   X       |
-3       _      |  |
-4 _       _  |  _ |
-5         @|_     |
-6        |    _   |
-7      |          |
-8 #  |     |#     |
+1                 |
+2     _ _ _ _     |
+3    |  # # X|    |
+4    |  # # #|    |
+5    |  # # #|    |
+6    |@̲ _ _ _|    |
+7                 |
+8                 |
 +-----------------+
 ```

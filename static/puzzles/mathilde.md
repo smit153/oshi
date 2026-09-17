@@ -1,21 +1,21 @@
 ---
-number: 251
 name: Mathilde
 slug: mathilde
-createdAt: 2026-09-03T19:04:41.339Z
+createdAt: 2026-06-11T20:30:48.640Z
 difficulty: medium
-minMoves: 8
+minMoves: 9
+number: 72
 ---
 
 ```
 + A B C D E F G H +
-1      |          |
-2 _        |  @   |
-3  |  _|X  |_  |  |
-4 _    |   |    _ |
-5     _    |_ # # |
-6 #̲|#      |   |  |
-7      |#         |
-8          |      |
+1   _     @   _ # |
+2  |# _     _  |  |
+3    |       |    |
+4       _|_       |
+5       X|        |
+6    |_     _|    |
+7  |_         _|# |
+8                 |
 +-----------------+
 ```

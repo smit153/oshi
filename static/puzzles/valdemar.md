@@ -1,21 +1,21 @@
 ---
+number: 135
 name: Valdemar
 slug: valdemar
-createdAt: 2026-06-11T20:50:13.025Z
-difficulty: medium
+createdAt: 2026-02-11T16:44:47.326Z
+difficulty: hard
 minMoves: 9
-number: 190
 ---
 
 ```
 + A B C D E F G H +
-1     _    |    _ |
-2 #   _     # _   |
-3        |    X̲   |
-4  |_ #         _ |
-5                 |
-6  |@ _  |#   # _ |
-7 #   _       _   |
-8        |        |
+1         _ _ _   |
+2        |        |
+3   _ _ #|  X _   |
+4  |           |  |
+5 #|  _ _     _   |
+6     _ _     _   |
+7           @   _ |
+8              |  |
 +-----------------+
 ```

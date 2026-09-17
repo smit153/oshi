@@ -6,7 +6,7 @@ import { pickRecommendedPuzzle } from "#/game/recommendation.ts";
  * Picks the recommended puzzle for the current user (same logic as the home
  * page card) and 303s to `/puzzles/<slug>`. Falls back to `/` when nothing
  * can be recommended — new users without a skill level, or fully-perfected
- * players when "loke" can't be loaded.
+ * players when "mikkel" can't be loaded.
  */
 export const handler = define.handlers({
   async GET(ctx) {

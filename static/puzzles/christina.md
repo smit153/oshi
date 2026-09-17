@@ -1,21 +1,21 @@
 ---
-number: 256
+number: 25
 name: Christina
 slug: christina
-createdAt: 2026-09-03T19:14:48.253Z
-difficulty: hard
-minMoves: 10
+createdAt: 2026-09-10T19:08:27.119Z
+difficulty: medium
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1    |  #|   |    |
-2 _   #|       |_ |
-3         X̲       |
-4                 |
-5               # |
-6 _             _ |
-7      |#  |   |  |
-8   @|   |#  |    |
+1  |           |  |
+2     H̲     H̲ @   |
+3 P       #     P |
+4 H|   |   |      |
+5  |    _      |  |
+6    |#    |      |
+7      |X   #|    |
+8  |    H      |  |
 +-----------------+
 ```

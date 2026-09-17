@@ -1,21 +1,21 @@
 ---
+number: 27
 name: Vilde
 slug: vilde
-createdAt: 2026-07-22T19:29:10.294Z
-difficulty: hard
-minMoves: 10
-number: 245
+createdAt: 2026-09-03T19:08:06.665Z
+difficulty: medium
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1   @             |
-2 _ #   _       _ |
-3 _ #           _ |
-4       _ _       |
-5 _     X   #   _ |
-6 _     _       _ |
-7               # |
-8                 |
+1  |#|         |  |
+2                 |
+3      |  X̲| |    |
+4   @|       |  _ |
+5    |    _  |    |
+6   #| |   |  #   |
+7                 |
+8  |#|         |  |
 +-----------------+
 ```

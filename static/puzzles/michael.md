@@ -1,21 +1,21 @@
 ---
 name: Michael
 slug: michael
-createdAt: 2026-08-24T20:29:22.520Z
+createdAt: 2026-07-22T19:29:10.294Z
 difficulty: medium
 minMoves: 8
-number: 242
+number: 243
 ---
 
 ```
 + A B C D E F G H +
 1  |           |  |
-2         X       |
-3  |  #        |  |
-4  |     |    #|  |
-5  |    #|     |  |
-6       _ _       |
-7   #             |
-8               @ |
+2   _         _ # |
+3  |  X        |  |
+4                 |
+5         @ #     |
+6   _         _|  |
+7       #         |
+8  |           |  |
 +-----------------+
 ```

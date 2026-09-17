@@ -1,21 +1,21 @@
 ---
 name: Camilla
 slug: camilla
-createdAt: 2026-07-22T19:29:10.294Z
-difficulty: hard
-minMoves: 10
-number: 235
+createdAt: 2026-06-11T19:51:18.066Z
+difficulty: medium
+number: 232
+minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1                 |
-2  |           |  |
-3   X   _ _       |
-4       _ @  |    |
-5    |  _ _  |    |
-6                 |
-7   #          |  |
-8               # |
+1  |  #     #|    |
+2 #        |      |
+3     _    |_ #   |
+4                 |
+5      |#      |  |
+6     X   _ _  |  |
+7   @           _ |
+8  |              |
 +-----------------+
 ```

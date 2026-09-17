@@ -1,21 +1,21 @@
 ---
-number: 257
 name: Emily
 slug: emily
-createdAt: 2026-09-03T19:20:47.794Z
+createdAt: 2026-08-24T20:29:22.520Z
 difficulty: medium
-minMoves: 9
+minMoves: 8
+number: 252
 ---
 
 ```
 + A B C D E F G H +
-1  |        # #|  |
-2   @̲ _|X  |_     |
-3                 |
-4    |            |
-5    |       |  # |
-6     _   _ _ _   |
-7         #|      |
-8              |  |
+1  |           |  |
+2         X       |
+3  |  #        |  |
+4  |     |    #|  |
+5  |    #|     |  |
+6       _ _       |
+7   #             |
+8               @ |
 +-----------------+
 ```

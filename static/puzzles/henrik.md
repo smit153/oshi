@@ -1,21 +1,21 @@
 ---
+number: 223
 name: Henrik
 slug: henrik
-createdAt: 2026-07-22T19:29:10.294Z
+createdAt: 2026-02-15T12:38:14.381Z
 difficulty: medium
-minMoves: 8
-number: 229
+minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1    |#      |    |
-2 @|      X    |  |
-3  |              |
-4                 |
-5                 |
-6  |  #        |# |
-7              |  |
-8    |      #|    |
+1     _   _ _ #   |
+2      |      _   |
+3   _           # |
+4     #̲    |      |
+5       _  |      |
+6   _    |      _ |
+7   X|            |
+8        |@       |
 +-----------------+
 ```

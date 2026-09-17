@@ -1,21 +1,21 @@
 ---
-number: 51
 name: Laurits
 slug: laurits
-createdAt: 2026-02-15T12:38:14.381Z
-difficulty: easy
-minMoves: 7
+createdAt: 2026-07-22T19:29:10.294Z
+difficulty: hard
+minMoves: 10
+number: 218
 ---
 
 ```
 + A B C D E F G H +
-1     #|   |      |
-2               # |
-3       _ _    |  |
-4 @̲    |          |
-5      |          |
-6        |#    |  |
-7   X|     |      |
-8                 |
+1       _ _    |  |
+2     _     _     |
+3                 |
+4   _|       |_   |
+5    |  X    |    |
+6   # _ #         |
+7         _       |
+8  |    # @    |  |
 +-----------------+
 ```

@@ -1,21 +1,21 @@
 ---
-number: 250
+number: 174
 name: Emilie
 slug: emilie
-createdAt: 2026-08-30T18:43:46.190Z
+createdAt: 2026-02-22T12:12:16.516Z
 difficulty: medium
-minMoves: 7
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1 _|           |_ |
-2     _  |  _ @   |
-3    |       |    |
-4   #̲     #   _   |
-5       X         |
-6    |_     _|    |
-7 _ #    |#     _ |
-8  |           |  |
+1 _   _     _   _ |
+2     _   @ _     |
+3 #|        _  |# |
+4       X  |      |
+5 _     _         |
+6      |          |
+7   _ #     #     |
+8  |              |
 +-----------------+
 ```

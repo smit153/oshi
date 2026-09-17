@@ -10,8 +10,8 @@ const args = parseArgs(Deno.args, {
 const defaultPages = [
   "/",
   "/puzzles",
-  "/puzzles/eik",
-  "/puzzles/eik/solutions",
+  "/puzzles/naja-b",
+  "/puzzles/naja-b/solutions",
   "/profile",
 ];
 

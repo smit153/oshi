@@ -1,21 +1,21 @@
 ---
-number: 254
 name: Christian
 slug: christian
-createdAt: 2026-09-08T18:07:15.536Z
-difficulty: easy
-minMoves: 5
+createdAt: 2026-04-02T10:58:49.806Z
+difficulty: medium
+minMoves: 9
+number: 66
 ---
 
 ```
 + A B C D E F G H +
-1 _ @ _ #  |      |
-2  |   |       |  |
-3   H _      |# _ |
-4 P X  |   |      |
-5 _     _ P   _|  |
-6   _       H     |
-7   # _   _|  _|  |
-8  |            # |
+1                 |
+2   #̲|    _ _     |
+3            |    |
+4    |    #  |    |
+5    |  X    |    |
+6    |#̲ _     _   |
+7            |@   |
+8                 |
 +-----------------+
 ```

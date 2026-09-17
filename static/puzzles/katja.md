@@ -1,21 +1,21 @@
 ---
 name: Katja
 slug: katja
-createdAt: 2026-07-22T19:29:10.294Z
+createdAt: 2026-05-23T06:54:03.823Z
 difficulty: medium
 minMoves: 8
-number: 225
+number: 262
 ---
 
 ```
 + A B C D E F G H +
-1    |_     _|# @ |
-2                 |
-3 _   X     _     |
-4             #   |
-5 #   _   # _   _ |
-6         #       |
-7     _           |
-8    |       |    |
+1             _   |
+2   #̲|  _ _   @|  |
+3                 |
+4        |X̲  |    |
+5    |  #    |    |
+6       _ _   _   |
+7            |#   |
+8                 |
 +-----------------+
 ```

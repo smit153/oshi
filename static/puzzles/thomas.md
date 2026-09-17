@@ -1,21 +1,21 @@
 ---
-number: 67
 name: Thomas
 slug: thomas
-createdAt: 2026-02-22T19:31:43.297Z
-difficulty: easy
+createdAt: 2026-07-19T10:27:51.034Z
+difficulty: medium
 minMoves: 7
+number: 1
 ---
 
 ```
 + A B C D E F G H +
-1 _    |    _     |
-2   _     # _     |
-3        |        |
-4 @̲           _|  |
-5                 |
-6 _      |X _  |  |
-7   _   #   _   # |
-8        |        |
+1 _ _|  _|        |
+2               # |
+3        | |  @   |
+4    |_           |
+5 _   _   X       |
+6   #         _   |
+7           _     |
+8 #               |
 +-----------------+
 ```

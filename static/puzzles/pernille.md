@@ -1,21 +1,21 @@
 ---
 name: Pernille
 slug: pernille
-createdAt: 2026-06-11T20:26:41.641Z
+createdAt: 2026-07-22T19:29:10.294Z
 difficulty: medium
-minMoves: 7
-number: 179
+minMoves: 8
+number: 229
 ---
 
 ```
 + A B C D E F G H +
-1                 |
-2   @       #     |
-3        |_   #   |
-4   #             |
-5 _   _      |_   |
-6      |  _       |
-7   #   _ X       |
-8    |            |
+1    |_     _|# @ |
+2                 |
+3 _   X     _     |
+4             #   |
+5 #   _   # _   _ |
+6         #       |
+7     _           |
+8    |       |    |
 +-----------------+
 ```

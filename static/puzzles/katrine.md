@@ -1,21 +1,21 @@
 ---
 name: Katrine
 slug: katrine
-createdAt: 2026-06-11T20:27:47.567Z
+createdAt: 2026-04-25T13:09:17.108Z
 difficulty: medium
-minMoves: 8
-number: 180
+minMoves: 9
+number: 194
 ---
 
 ```
 + A B C D E F G H +
-1     _     _     |
-2    |@     _|    |
-3       _ _       |
-4  |   |_ _   #|# |
-5 #|#   _ X̲|   |  |
-6     _           |
-7    |_     _|    |
-8                 |
+1 _|         |    |
+2   X      |   |  |
+3       _|   |    |
+4      |# #̲|   |  |
+5    |  #|   |    |
+6  |   |   |      |
+7    |   |    @ _ |
+8  |   |       |  |
 +-----------------+
 ```

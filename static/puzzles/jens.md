@@ -1,21 +1,21 @@
 ---
+number: 183
 name: Jens
 slug: jens
-createdAt: 2026-05-02T15:12:06.008Z
-difficulty: easy
-minMoves: 6
-number: 139
+createdAt: 2026-03-07T13:27:33.906Z
+difficulty: medium
+minMoves: 12
 ---
 
 ```
 + A B C D E F G H +
-1             _   |
-2         _   #|  |
-3     _           |
-4 _       X  |    |
-5       #         |
-6     #    |      |
-7                 |
-8 @      |        |
+1     _   _     _ |
+2 _ X  |_  | |    |
+3   _|   |  _ _   |
+4      |  _  |  #̲ |
+5  |  _    |_     |
+6  |     |_   @ _ |
+7          |_ _   |
+8     #  |        |
 +-----------------+
 ```

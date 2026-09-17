@@ -1,21 +1,21 @@
 ---
-number: 258
+number: 124
 name: Thor
 slug: thor
-createdAt: 2026-09-03T19:22:59.592Z
+createdAt: 2026-05-23T07:52:37.853Z
 difficulty: medium
-minMoves: 9
+minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1    |_      |    |
-2     _ #   _     |
-3 _|_         #̲|_ |
-4 #           @   |
-5 _ _         _ _ |
-6     _     _  |X |
-7     _   # _     |
-8    |     | |    |
+1   _     _       |
+2          |   |  |
+3 #               |
+4                 |
+5    |@ #|  X|    |
+6  |  # _       # |
+7        |    _   |
+8                 |
 +-----------------+
 ```

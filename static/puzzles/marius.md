@@ -1,21 +1,21 @@
 ---
+number: 109
 name: Marius
 slug: marius
-createdAt: 2026-06-11T20:28:50.135Z
+createdAt: 2026-09-14T19:19:51.658Z
 difficulty: medium
-minMoves: 8
-number: 181
+minMoves: 6
 ---
 
 ```
 + A B C D E F G H +
-1   _   _   #̲     |
-2             #   |
-3      |  _  |  # |
-4  |  _ X         |
-5 #   @|     |    |
-6       _         |
-7     #      |    |
-8                 |
+1       # _       |
+2   @      |      |
+3   #̲             |
+4 #     P̲|H̲ H H H |
+5 H H H H|P     # |
+6   #             |
+7      |_     X̲|  |
+8         #       |
 +-----------------+
 ```

@@ -1,21 +1,21 @@
 ---
-number: 22
+number: 166
 name: Anders
 slug: anders
-createdAt: 2026-02-11T16:44:47.326Z
-difficulty: hard
-minMoves: 9
+createdAt: 2026-03-03T19:06:10.665Z
+difficulty: medium
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1         _ _ _   |
-2        |        |
-3   _ _ #|  X _   |
-4  |           |  |
-5 #|  _ _     _   |
-6     _ _     _   |
-7           @   _ |
-8              |  |
+1   _         _ # |
+2  |@ _     _  |  |
+3    |       |    |
+4       _|_   X   |
+5       #|        |
+6    |_     _|    |
+7  |_         _|# |
+8                 |
 +-----------------+
 ```

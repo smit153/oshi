@@ -4,5 +4,5 @@
 # so it stops showing up as an outlier on every tuning run.
 
 # Heavy/degenerate BFS cases (single-solution, very slow) — ignored during tuning.
-mons
-aegir
+konrad
+liam

@@ -1,0 +1,21 @@
+---
+number: 259
+name: Matheo
+slug: matheo
+createdAt: 2026-03-03T19:22:59.980Z
+difficulty: medium
+minMoves: 8
+---
+
+```
++ A B C D E F G H +
+1  |         |    |
+2 _   #         _ |
+3     _     _     |
+4    |      X|  # |
+5 #  |_     _|    |
+6 _   @         _ |
+7           #     |
+8    |         |  |
++-----------------+
+```

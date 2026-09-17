@@ -1,21 +1,21 @@
 ---
-number: 263
+number: 213
 name: Victor
 slug: victor
-createdAt: 2026-09-10T19:03:58.202Z
-difficulty: medium
+createdAt: 2026-02-10T19:03:11.838Z
+difficulty: hard
 minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1           #     |
-2 _ # _   _     @̲ |
-3     P    |      |
-4 _     _       _ |
-5           _     |
-6 _  |X̲   P̲     _ |
-7                 |
-8       #     #   |
+1 # _   X     _   |
+2  |  _     _ #|  |
+3    |       |    |
+4       _|_       |
+5        |@       |
+6    |_     _|    |
+7 #|_         _|  |
+8                 |
 +-----------------+
 ```

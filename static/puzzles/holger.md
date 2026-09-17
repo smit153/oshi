@@ -1,21 +1,21 @@
 ---
-number: 145
+number: 97
 name: Holger
 slug: holger
-createdAt: 2026-05-23T07:52:37.853Z
+createdAt: 2026-02-13T13:33:51.210Z
 difficulty: medium
-minMoves: 7
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1   _     _       |
-2          |   |  |
-3 #               |
-4                 |
-5    |@ #|  X|    |
-6  |  # _       # |
-7        |    _   |
-8                 |
+1     #  |        |
+2 # _ _      |_   |
+3           #̲ _ # |
+4   X̲      |   |  |
+5 _               |
+6   _ #̲   _ _     |
+7             @   |
+8        |        |
 +-----------------+
 ```

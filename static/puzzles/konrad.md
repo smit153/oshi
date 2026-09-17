@@ -1,21 +1,21 @@
 ---
+number: 185
 name: Konrad
 slug: konrad
-createdAt: 2026-06-11T19:59:29.193Z
-difficulty: medium
-number: 167
-minMoves: 9
+createdAt: 2026-03-06T13:39:00.339Z
+difficulty: hard
+minMoves: 11
 ---
 
 ```
 + A B C D E F G H +
-1        |     |  |
-2   X  |    _|    |
-3   _   #         |
-4 _   #   #       |
-5       # _|      |
-6     _     _|    |
-7    |        @   |
-8  |              |
+1 # _  |   |  _ # |
+2  |           |  |
+3     #̲|   |#̲     |
+4 _   X         _ |
+5     _     _     |
+6     @|   |#     |
+7  |_         _|  |
+8 #      |      # |
 +-----------------+
 ```

@@ -1,21 +1,21 @@
 ---
-number: 60
 name: Cecilie
 slug: cecilie
-createdAt: 2026-02-22T12:12:16.516Z
-difficulty: medium
+createdAt: 2026-08-24T20:40:00.414Z
+difficulty: hard
 minMoves: 9
+number: 108
 ---
 
 ```
 + A B C D E F G H +
-1 _   _     _   _ |
-2     _   @ _     |
-3 #|        _  |# |
-4       X  |      |
-5 _     _         |
-6      |          |
-7   _ #     #     |
-8  |              |
+1          |      |
+2         #       |
+3 _             _ |
+4       _|  X     |
+5 _         _   _ |
+6   #        |    |
+7 @     #         |
+8          |      |
 +-----------------+
 ```

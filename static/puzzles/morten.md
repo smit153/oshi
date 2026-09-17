@@ -1,21 +1,21 @@
 ---
+number: 122
 name: Morten
 slug: morten
-createdAt: 2026-07-19T10:27:51.034Z
-difficulty: medium
+createdAt: 2026-03-03T14:31:15.218Z
+difficulty: easy
 minMoves: 7
-number: 203
 ---
 
 ```
 + A B C D E F G H +
-1 _ _|  _|        |
-2               # |
-3        | |  @   |
-4    |_           |
-5 _   _   X       |
-6   #         _   |
-7           _     |
-8 #               |
+1     #|  _       |
+2             #̲   |
+3    |_      |@   |
+4                 |
+5 #|       |_   # |
+6      |_     _   |
+7  |    X         |
+8        |#       |
 +-----------------+
 ```

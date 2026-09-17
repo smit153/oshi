@@ -1,21 +1,21 @@
 ---
-number: 82
+number: 96
 name: Rasmus
 slug: rasmus
-createdAt: 2026-03-03T14:36:00.146Z
-difficulty: medium
-minMoves: 7
+createdAt: 2026-03-11T10:33:12.877Z
+difficulty: easy
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1     _  |    _   |
-2 #   _       @ _ |
-3  |    #|        |
-4   _           _ |
-5  |      X       |
-6     _  |    _   |
-7     _ #       _ |
-8          |      |
+1                 |
+2   _ _ _ _       |
+3  |X̲  |   |      |
+4  |  _  | |      |
+5  |      #|      |
+6  |_ _ #̲ @̲|      |
+7                 |
+8                 |
 +-----------------+
 ```

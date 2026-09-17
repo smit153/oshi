@@ -1,21 +1,21 @@
 ---
-number: 48
+number: 125
 name: Esther
 slug: esther
-createdAt: 2026-02-15T12:35:22.322Z
+createdAt: 2026-02-22T12:12:16.516Z
 difficulty: medium
-minMoves: 7
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1    |            |
-2       _  |      |
-3   X|    _ #|    |
-4 _|      _       |
-5    |  #̲    |  # |
-6           @     |
-7    |#|_    |_   |
-8   #             |
+1  |_             |
+2     #     #     |
+3 _    |_         |
+4                 |
+5          |_     |
+6 @|  _     _ X|# |
+7 _   _   # _   _ |
+8                 |
 +-----------------+
 ```

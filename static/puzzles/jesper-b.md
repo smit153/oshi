@@ -1,0 +1,21 @@
+---
+number: 222
+name: Jesper-b
+slug: jesper-b
+createdAt: 2026-02-15T10:38:50.254Z
+difficulty: hard
+minMoves: 12
+---
+
+```
++ A B C D E F G H +
+1  | | |   | |@|  |
+2 #               |
+3                 |
+4  | | |X  | | |  |
+5                 |
+6           #     |
+7  | | |   | | |  |
+8         #       |
++-----------------+
+```

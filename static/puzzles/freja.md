@@ -1,21 +1,21 @@
 ---
 name: Freja
 slug: freja
-createdAt: 2026-04-02T10:49:15.734Z
+createdAt: 2026-06-11T19:59:29.193Z
 difficulty: medium
-minMoves: 8
-number: 115
+number: 64
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1 _|           |_ |
-2      |   |      |
-3     #  |  #     |
-4   @   _|_   X   |
-5       _ #̲       |
-6    |       |    |
-7 _    |#  |    _ |
-8  |           |  |
+1        |     |  |
+2   X  |    _|    |
+3   _   #         |
+4 _   #   #       |
+5       # _|      |
+6     _     _|    |
+7    |        @   |
+8  |              |
 +-----------------+
 ```

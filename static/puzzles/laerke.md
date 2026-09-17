@@ -1,21 +1,21 @@
 ---
-number: 3
-name: Laerke
+number: 85
+name: Lærke
 slug: laerke
-createdAt: 2026-01-24T00:00:00.000Z
-difficulty: medium
-minMoves: 9
+createdAt: 2026-03-03T14:34:35.907Z
+difficulty: hard
+minMoves: 10
 ---
 
 ```
 + A B C D E F G H +
-1  |         |    |
-2 _   #         _ |
-3     _ _ _ @̲     |
-4    |       |  # |
-5 #  |_ _ _ _|    |
-6 _             _ |
-7       #̂         |
-8    |         |  |
+1   _   _     _   |
+2  |          #   |
+3         _|_     |
+4         #|      |
+5     @̲|_         |
+6  |  #|      X|  |
+7   #   _     _   |
+8                 |
 +-----------------+
 ```

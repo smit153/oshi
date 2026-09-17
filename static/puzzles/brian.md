@@ -1,21 +1,21 @@
 ---
-number: 91
+number: 114
 name: Brian
 slug: brian
-createdAt: 2026-03-03T20:02:42.702Z
+createdAt: 2026-03-03T14:27:36.087Z
 difficulty: medium
-minMoves: 8
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1   _   _ _   _ X |
-2  |  _     _  |  |
-3    |  _ _ #|    |
-4  |      #    |  |
-5  |    #̲ _    |  |
-6    |@̲     _|    |
-7  |_   _ _   _|  |
-8                 |
+1              |  |
+2     @  |  _  |# |
+3       _|        |
+4                 |
+5        |    X   |
+6       _|  _     |
+7     #        |# |
+8              |  |
 +-----------------+
 ```

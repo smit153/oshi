@@ -1,21 +1,21 @@
 ---
+number: 211
 name: Bjørn
 slug: bjorn
-createdAt: 2026-06-11T20:48:01.291Z
-difficulty: medium
-minMoves: 7
-number: 189
+createdAt: 2026-02-11T16:44:47.326Z
+difficulty: hard
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1    |       |_   |
-2 _ _|     |   |_ |
-3     X   _|      |
-4         #|    # |
-5      |#̲ #       |
-6 #̲    |    @ _ _ |
-7  |_  |     |    |
-8    |       |    |
+1 _|              |
+2     _     _   @ |
+3       _ _ X̲     |
+4    | |          |
+5      |  _   #   |
+6        |#       |
+7   #             |
+8           #     |
 +-----------------+
 ```

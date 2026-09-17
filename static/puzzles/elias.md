@@ -1,21 +1,21 @@
 ---
-number: 71
 name: Elias
 slug: elias
-createdAt: 2026-03-03T14:12:31.638Z
-difficulty: medium
+createdAt: 2026-08-24T20:36:45.983Z
+difficulty: hard
 minMoves: 10
+number: 7
 ---
 
 ```
 + A B C D E F G H +
-1          |#   # |
-2   _  |      @   |
-3          |#̲   # |
-4      |          |
-5  |      _   _   |
-6     X           |
-7       _      |  |
-8                 |
+1  |_ @     _ _|# |
+2        |        |
+3 _    |   |    _ |
+4                 |
+5                 |
+6      |   |      |
+7 # _ _ #̲|_ X̲ _   |
+8  |           |  |
 +-----------------+
 ```

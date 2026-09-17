@@ -17,7 +17,7 @@ import type { SkillLevel } from "#/game/types.ts";
  *  - new user (`skillLevel === null`) → tutorial puzzle (kind: "onboarding")
  *  - beginner with remaining onboarding → onboarding puzzle (kind: "onboarding")
  *  - beginner who exhausted onboarding → falls through to random
- *  - everything perfected (or only today's daily left) → "loke" (kind: "random")
+ *  - everything perfected (or only today's daily left) → "mikkel" (kind: "random")
  *  - otherwise → random non-optimal puzzle of appropriate difficulty,
  *    with today's daily excluded (kind: "random")
  */
@@ -57,14 +57,14 @@ export async function pickRecommendedPuzzle(
     .map((entry) => entry.slug);
 
   // Endgame: everything available (besides today's daily, which is shown on its
-  // own card) is perfected. Recommend loke even if today's daily is still
+  // own card) is perfected. Recommend mikkel even if today's daily is still
   // unsolved — otherwise excludeSlugs covers every puzzle and we 500.
   const nothingLeftToPerfect = released
     .filter((entry) => entry.minMoves && entry.slug !== dailyPuzzle?.slug)
     .every((entry) => optimalSlugs.includes(entry.slug));
 
   if (nothingLeftToPerfect) {
-    const puzzle = await getPuzzle("loke");
+    const puzzle = await getPuzzle("mikkel");
     if (!puzzle) throw new Error("Unable to get final puzzle");
     return puzzle;
   }

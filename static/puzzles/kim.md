@@ -1,21 +1,21 @@
 ---
-number: 58
+number: 56
 name: Kim
 slug: kim
-createdAt: 2026-02-15T13:49:38.739Z
-difficulty: easy
-minMoves: 8
+createdAt: 2026-01-26T00:00:00.000Z
+difficulty: medium
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1   _         @   |
-2    |_           |
-3   X  |          |
-4    |_  |_       |
-5     #|   |_     |
-6        |_  |    |
-7           #̲  |  |
-8            |    |
+1      |          |
+2     _     _ #   |
+3    |       |    |
+4      |# #       |
+5      |@̲ #̲       |
+6    |_     _|    |
+7   X  |          |
+8          |      |
 +-----------------+
 ```

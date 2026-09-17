@@ -1,21 +1,21 @@
 ---
-number: 247
+number: 4
 name: Villads
 slug: villads
-createdAt: 2026-08-30T08:34:44.621Z
-difficulty: medium
-minMoves: 8
+createdAt: 2026-02-15T12:38:14.381Z
+difficulty: easy
+minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1                 |
-2  |#       @  |  |
-3                 |
-4  |           |  |
-5  |          #|  |
-6         X       |
-7  |  #        |  |
+1     #|   |      |
+2               # |
+3       _ _    |  |
+4 @̲    |          |
+5      |          |
+6        |#    |  |
+7   X|     |      |
 8                 |
 +-----------------+
 ```

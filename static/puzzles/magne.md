@@ -1,21 +1,21 @@
 ---
-number: 267
+number: 30
 name: Magne
 slug: magne
-createdAt: 2026-09-14T19:19:51.658Z
+createdAt: 2026-01-27T00:00:00.000Z
 difficulty: medium
-minMoves: 6
+minMoves: 9
 ---
 
 ```
 + A B C D E F G H +
-1       # _       |
-2   @      |      |
-3   #̲             |
-4 #     P̲|H̲ H H H |
-5 H H H H|P     # |
-6   #             |
-7      |_     X̲|  |
-8         #       |
+1     _      |    |
+2   #     @   _   |
+3     #|_ _       |
+4 _            |  |
+5       X         |
+6     _ _     #   |
+7  |          _   |
+8     #|          |
 +-----------------+
 ```

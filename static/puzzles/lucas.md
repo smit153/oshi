@@ -1,21 +1,21 @@
 ---
-number: 260
+number: 245
 name: Lucas
 slug: lucas
-createdAt: 2026-09-08T19:02:25.003Z
+createdAt: 2026-02-13T13:30:48.857Z
 difficulty: medium
 minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1   _  |      _ _ |
-2     #̲   #       |
-3 _   @ _  |_  |  |
-4              |P |
-5 P   _|       |  |
-6   H      |X̲ _   |
-7 _|  _|       |  |
-8       #  |      |
+1     @           |
+2 _     _     _   |
+3              |  |
+4   # _|    _     |
+5             #   |
+6 _|  X _     _   |
+7      |          |
+8         #       |
 +-----------------+
 ```

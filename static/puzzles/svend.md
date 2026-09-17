@@ -1,21 +1,21 @@
 ---
+number: 52
 name: Svend
 slug: svend
-number: 157
-createdAt: 2026-05-23T07:43:01.034Z
-difficulty: medium
-minMoves: 8
+createdAt: 2026-02-15T13:38:23.385Z
+difficulty: easy
+minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1 _    |    #̲  |  |
-2  |              |
-3   # _        |  |
-4      |  X       |
-5         _ @     |
-6   #        |    |
-7       _         |
-8       #      |  |
+1 @   # _     _   |
+2          |      |
+3   _   #|  X|    |
+4    |            |
+5      |_      |  |
+6  |    _|    #̲   |
+7                 |
+8               # |
 +-----------------+
 ```

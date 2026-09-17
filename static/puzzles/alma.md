@@ -1,21 +1,21 @@
 ---
-number: 46
+number: 126
 name: Alma
 slug: alma
-createdAt: 2026-02-15T12:00:53.695Z
-difficulty: medium
+createdAt: 2026-02-15T13:43:50.658Z
+difficulty: hard
 minMoves: 7
 ---
 
 ```
 + A B C D E F G H +
-1 #               |
-2    |    #       |
-3        |     |  |
-4  |  #   _       |
-5        |    X|  |
-6    |_         _ |
-7        |    _|  |
-8   @             |
+1                 |
+2    |# @̲ #  |_   |
+3                 |
+4  |  _|   |  _|  |
+5                 |
+6    |     |   |  |
+7   _   X̲   _   _ |
+8                 |
 +-----------------+
 ```

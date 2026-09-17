@@ -1,21 +1,21 @@
 ---
-number: 249
 name: Hjalte
 slug: hjalte
-createdAt: 2026-08-30T18:39:12.183Z
-difficulty: medium
-minMoves: 9
+createdAt: 2026-07-12T19:47:02.103Z
+difficulty: hard
+minMoves: 10
+number: 256
 ---
 
 ```
 + A B C D E F G H +
-1      |#         |
-2               _ |
-3     @ X         |
-4 _    |   |    _ |
-5      |   |      |
-6 _             _ |
-7           #     |
-8     #|   |      |
+1       #̲     _|  |
+2                 |
+3 @    |          |
+4 _      |      #̲ |
+5 #    |    X     |
+6                 |
+7   _   _|    _   |
+8    |  #         |
 +-----------------+
 ```

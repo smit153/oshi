@@ -1,21 +1,21 @@
 ---
-number: 5
 name: Felix
 slug: felix
-createdAt: 2026-01-26T00:00:00.000Z
+createdAt: 2026-06-11T20:50:13.025Z
 difficulty: medium
-minMoves: 10
+minMoves: 9
+number: 48
 ---
 
 ```
 + A B C D E F G H +
-1                 |
-2   # _ _ _ _ @   |
-3    |       |    |
-4            |    |
-5            |    |
-6    |_ _ X̲ _|    |
-7   #         #   |
-8                 |
+1     _    |    _ |
+2 #   _     # _   |
+3        |    X̲   |
+4  |_ #         _ |
+5                 |
+6  |@ _  |#   # _ |
+7 #   _       _   |
+8        |        |
 +-----------------+
 ```

@@ -1,21 +1,21 @@
 ---
+number: 6
 name: Astrid
 slug: astrid
-createdAt: 2026-02-26T15:28:55.716Z
+createdAt: 2026-02-13T12:31:39.655Z
 difficulty: medium
-minMoves: 7
-number: 103
+minMoves: 8
 ---
 
 ```
 + A B C D E F G H +
-1 #        |    # |
-2  |   |     |_   |
-3    |_    |   |  |
-4  |   |    @     |
-5     X    |  _|  |
-6  |_  |     |    |
-7    |     |   |  |
-8 #    |        # |
+1        |        |
+2     @           |
+3       _  |#̲     |
+4 #   _           |
+5     _      |_   |
+6      |  _       |
+7   #   _|    X̲   |
+8                 |
 +-----------------+
 ```

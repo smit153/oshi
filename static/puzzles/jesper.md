@@ -1,21 +1,21 @@
 ---
 name: Jesper
 slug: jesper
-createdAt: 2026-07-25T08:21:34.443Z
-difficulty: medium
-minMoves: 8
-number: 209
+createdAt: 2026-08-16T08:38:16.463Z
+difficulty: easy
+minMoves: 7
+number: 162
 ---
 
 ```
 + A B C D E F G H +
-1 _   X̲     _   _ |
-2               # |
-3   _   _|_   _   |
-4    |       |    |
-5   _|  #̲ _  |_   |
-6        |#       |
-7     _     _     |
-8 @               |
+1  |    _ _    |  |
+2 _ # _     _   _ |
+3                 |
+4                 |
+5                 |
+6 _   _   X _ # _ |
+7       _ @̲       |
+8 #            |  |
 +-----------------+
 ```
