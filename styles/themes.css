@@ -36,149 +36,149 @@
   --color-portal-alt: #341421;
 }
 
-/* Dracula */
-:root[data-theme="dracula"] {
+/* Nebula — deep-space indigo with aurora accents */
+:root[data-theme="nebula"] {
   color-scheme: dark;
   --hover-brightness: 1.4;
-  --btn-active-text: #282a36;
-  --color-surface-1: #282a36;
-  --color-surface-2: #21222c;
-  --color-surface-3: #343746;
-  --color-surface-4: #44475a;
-  --color-text-1: #f8f8f2;
-  --color-text-2: #a0aabe;
-  --color-text-3: #8090c2;
-  --color-brand: #ff79c6;
-  --color-link: #8be9fd;
-  --color-ui-1: #50fa7b;
-  --color-ui-2: #f1fa8c;
-  --color-ui-3: #bd93f9;
-  --color-ui-4: #ffb86c;
-  --color-ui-contrast: #ff79c6;
-  --color-hole: #12131a;
-  --color-portal: #8be9fd;
-  --color-portal-alt: #44475a;
+  --btn-active-text: #150f2e;
+  --color-surface-1: #150f2e;
+  --color-surface-2: #1e1640;
+  --color-surface-3: #2b2058;
+  --color-surface-4: #3d2f78;
+  --color-text-1: #f0ecff;
+  --color-text-2: #bcb3e6;
+  --color-text-3: #8a7fc0;
+  --color-brand: #c084fc;
+  --color-link: #67e8f9;
+  --color-ui-1: #67e8f9;
+  --color-ui-2: #fbbf24;
+  --color-ui-3: #f472b6;
+  --color-ui-4: #818cf8;
+  --color-ui-contrast: #c084fc;
+  --color-hole: #0a0718;
+  --color-portal: #67e8f9;
+  --color-portal-alt: #2a1b4d;
 }
 
-/* Acid — matrix/terminal neon */
-:root[data-theme="acid"] {
+/* Phosphor — amber CRT terminal glow */
+:root[data-theme="phosphor"] {
   color-scheme: dark;
-  --hover-brightness: 1.4;
-  --btn-active-text: #0d0d0d;
-  --color-surface-1: #0d0d0d;
-  --color-surface-2: #141414;
-  --color-surface-3: #1c1c1c;
-  --color-surface-4: #2a2a2a;
-  --color-text-1: #e0ffe0;
-  --color-text-2: #90d090;
-  --color-text-3: #60a060;
-  --color-brand: #00ff41;
-  --color-link: #00e5ff;
-  --color-ui-1: #00ff41;
-  --color-ui-2: #ffff00;
-  --color-ui-3: #ff0090;
-  --color-ui-4: #ff6600;
-  --color-ui-contrast: #0d0d0d;
+  --hover-brightness: 1.5;
+  --btn-active-text: #0d0a00;
+  --color-surface-1: #0d0a00;
+  --color-surface-2: #171100;
+  --color-surface-3: #241a00;
+  --color-surface-4: #362700;
+  --color-text-1: #ffe9b3;
+  --color-text-2: #d6b56b;
+  --color-text-3: #96793b;
+  --color-brand: #ffb000;
+  --color-link: #ff7a1a;
+  --color-ui-1: #ffb000;
+  --color-ui-2: #4ade80;
+  --color-ui-3: #f87171;
+  --color-ui-4: #7dd3fc;
+  --color-ui-contrast: #ffb000;
   --color-hole: #000000;
-  --color-portal: #00e5ff;
-  --color-portal-alt: #003b45;
+  --color-portal: #7dd3fc;
+  --color-portal-alt: #1a1200;
 }
 
 /* ─── Light themes ─────────────────────────────────────────────── */
 
-/* Ember — warm light theme, red/orange/amber palette */
-:root[data-theme="ember"] {
+/* Glacier — crisp icy-blue light theme */
+:root[data-theme="glacier"] {
   color-scheme: light;
   --hover-brightness: 0.71;
-  --btn-active-text: #ffffff;
-  --color-surface-1: #ffffff;
-  --color-surface-2: #faf6f1;
-  --color-surface-3: #eddecb;
-  --color-surface-4: #c9b49a;
-  --color-text-1: #2d1a0e;
-  --color-text-2: #6b3a1f;
-  --color-text-3: #a07858;
-  --color-brand: #b91c1c;
-  --color-link: #0f766e;
-  --color-ui-1: #166534;
-  --color-ui-2: #ea580c;
-  --color-ui-3: #b91c1c;
-  --color-ui-4: #374151;
-  --color-ui-contrast: #ffffff;
-  --color-hole: #2d1a0e;
-  --color-portal: #0f766e;
-  --color-portal-alt: #d7ece9;
+  --btn-active-text: #f4fbff;
+  --color-surface-1: #f4fbff;
+  --color-surface-2: #e1f2fb;
+  --color-surface-3: #c3e3f2;
+  --color-surface-4: #8fb8cc;
+  --color-text-1: #142c38;
+  --color-text-2: #2f5468;
+  --color-text-3: #587c8f;
+  --color-brand: #1d6fa5;
+  --color-link: #1e8f78;
+  --color-ui-1: #1e8f78;
+  --color-ui-2: #e6a532;
+  --color-ui-3: #7a5fb0;
+  --color-ui-4: #4a7a9c;
+  --color-ui-contrast: #1d6fa5;
+  --color-hole: #142c38;
+  --color-portal: #1e8f78;
+  --color-portal-alt: #d6ecec;
 }
 
-/* Solarized Light (ethanschoonover.com/solarized) */
-:root[data-theme="solarized-light"] {
+/* Terracotta — warm desert clay light theme */
+:root[data-theme="terracotta"] {
   color-scheme: light;
   --hover-brightness: 0.71;
-  --btn-active-text: #fdf6e3;
-  --color-surface-1: #fdf6e3;
-  --color-surface-2: #eee8d5;
-  --color-surface-3: #ddd6be;
-  --color-surface-4: #93a1a1;
-  --color-text-1: #51646b;
-  --color-text-2: #5e6b6c;
-  --color-text-3: #626969;
-  --color-brand: #b58900;
-  --color-link: #268bd2;
-  --color-ui-1: #2aa198;
-  --color-ui-2: #859900;
-  --color-ui-3: #d33682;
-  --color-ui-4: #073642;
-  --color-ui-contrast: #b58900;
-  --color-hole: #073642;
-  --color-portal: #268bd2;
-  --color-portal-alt: #d6e5ef;
+  --btn-active-text: #fbf3ea;
+  --color-surface-1: #fbf3ea;
+  --color-surface-2: #f3e2cd;
+  --color-surface-3: #e3c6a2;
+  --color-surface-4: #b98c62;
+  --color-text-1: #4a3222;
+  --color-text-2: #6e4c34;
+  --color-text-3: #93714f;
+  --color-brand: #c1522d;
+  --color-link: #2f7d78;
+  --color-ui-1: #2f7d78;
+  --color-ui-2: #dba030;
+  --color-ui-3: #a13d3d;
+  --color-ui-4: #5c7a5e;
+  --color-ui-contrast: #c1522d;
+  --color-hole: #4a3222;
+  --color-portal: #2f7d78;
+  --color-portal-alt: #d9ece9;
 }
 
-/* Catppuccin Latte (catppuccin.com) */
-:root[data-theme="catppuccin"] {
+/* Sakura — cherry-blossom light theme */
+:root[data-theme="sakura"] {
   color-scheme: light;
   --hover-brightness: 0.71;
-  --btn-active-text: #eff1f5;
-  --color-surface-1: #eff1f5;
-  --color-surface-2: #e1e4ec;
-  --color-surface-3: #cdd0db;
-  --color-surface-4: #9499ab;
-  --color-text-1: #4c4f69;
-  --color-text-2: #6c6f85;
-  --color-text-3: #9ca0b0;
-  --color-brand: #8839ef;
-  --color-link: #1e66f5;
-  --color-ui-1: #40a02b;
-  --color-ui-2: #df8e1d;
-  --color-ui-3: #8839ef;
-  --color-ui-4: #fe640b;
-  --color-ui-contrast: #8839ef;
-  --color-hole: #3b3f52;
-  --color-portal: #1e66f5;
-  --color-portal-alt: #ccd6f4;
+  --btn-active-text: #fff5f7;
+  --color-surface-1: #fff5f7;
+  --color-surface-2: #ffe4ec;
+  --color-surface-3: #f9c9d8;
+  --color-surface-4: #dba0b8;
+  --color-text-1: #4a2733;
+  --color-text-2: #7a4a5c;
+  --color-text-3: #a5788a;
+  --color-brand: #e0578a;
+  --color-link: #5b8c6e;
+  --color-ui-1: #5b8c6e;
+  --color-ui-2: #f2a65a;
+  --color-ui-3: #b45d84;
+  --color-ui-4: #6b7fb0;
+  --color-ui-contrast: #e0578a;
+  --color-hole: #4a2733;
+  --color-portal: #5b8c6e;
+  --color-portal-alt: #dcefe1;
 }
 
-/* Catppuccin Latte, adjusted for print (catppuccin.com) */
+/* Sakura, adjusted for print */
 @media print {
   body {
     color-scheme: light;
-    --btn-active-text: #eff1f5;
-    --color-surface-1: #eff1f5;
-    --color-surface-2: #e6e9ef;
-    --color-surface-3: #dce0e8;
-    --color-surface-4: #acb0be;
-    --color-text-1: #272836;
-    --color-text-2: #383a46;
-    --color-text-3: #51525e;
-    --color-brand: #8839ef;
-    --color-link: #1e66f5;
-    --color-ui-1: #40a02b;
-    --color-ui-2: #df8e1d;
-    --color-ui-3: #8839ef;
-    --color-ui-4: #fe640b;
-    --color-ui-contrast: #8839ef;
-    --color-hole: #acb0be;
-    --color-portal: #1e66f5;
-    --color-portal-alt: #dce0e8;
+    --btn-active-text: #fff5f7;
+    --color-surface-1: #fff5f7;
+    --color-surface-2: #ffeef2;
+    --color-surface-3: #f7dbe4;
+    --color-surface-4: #e6bccd;
+    --color-text-1: #2e131c;
+    --color-text-2: #522233;
+    --color-text-3: #7a4256;
+    --color-brand: #e0578a;
+    --color-link: #5b8c6e;
+    --color-ui-1: #5b8c6e;
+    --color-ui-2: #f2a65a;
+    --color-ui-3: #b45d84;
+    --color-ui-4: #6b7fb0;
+    --color-ui-contrast: #e0578a;
+    --color-hole: #e6bccd;
+    --color-portal: #5b8c6e;
+    --color-portal-alt: #f7dbe4;
   }
 }
