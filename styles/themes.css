@@ -9,13 +9,13 @@
 
 /* ─── Dark themes ──────────────────────────────────────────────── */
 
-/* Oshi (game identity) — Japanese red & ink */
+/* Oshi (game identity) — ink & sky blue */
 :root[data-theme="oshi"] {
   color-scheme: dark;
   --hover-brightness: 1.4;
   --btn-active-text: #f4e9d8;
 
-  --color-brand: #e0263f;
+  --color-brand: #74c0fc;
   --color-link: #e3b23c;
   --color-surface-1: #120f11;
   --color-surface-2: #1b171a;
@@ -30,40 +30,10 @@
   --color-ui-2: #f4e9d8;
   --color-ui-3: #4a5fc1;
   --color-ui-4: #7c9473;
-  --color-ui-contrast: #e0263f;
+  --color-ui-contrast: #74c0fc;
   --color-hole: #08070a;
   --color-portal: #4fd1c5;
   --color-portal-alt: #341421;
-}
-
-/* High Contrast / A11y — Wong (2011) / Okabe-Ito colorblind-safe palette.
-   All ui colors pass WCAG AAA (7:1) on pure black.
-   surface-4 = surface-3 (collapsed) to keep text-3 above AA on elevated surfaces. */
-:root[data-theme="high-contrast"] {
-  color-scheme: dark;
-  --hover-brightness: 1.8;
-  --btn-active-text: #000000;
-
-  --color-brand: #ffffff;
-  --color-link: var(--blue-3);
-
-  --color-surface-1: #000000;
-  --color-surface-2: #0d0d0d;
-  --color-surface-3: #1a1a1a;
-  --color-surface-4: #1a1a1a;
-
-  --color-text-1: #ffffff;
-  --color-text-2: #cccccc;
-  --color-text-3: #888888;
-
-  --color-ui-1: var(--blue-3); /* destination — sky blue   — 10.7:1 */
-  --color-ui-2: var(--yellow-7); /* puck        — orange     — 9.8:1  */
-  --color-ui-3: var(--pink-5); /* blockers    — warm pink  — 7.0:1  */
-  --color-ui-4: var(--gray-4); /* walls       — cool gray  — 14.0:1 */
-  --color-ui-contrast: #000000;
-  --color-hole: #000000; /* void — the rendered ring carries definition */
-  --color-portal: var(--teal-3); /* bluish-green — 14.6:1 */
-  --color-portal-alt: #000000;
 }
 
 /* Dracula */

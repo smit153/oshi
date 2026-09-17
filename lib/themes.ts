@@ -11,14 +11,7 @@ export const THEMES: Theme[] = [
     key: "oshi",
     label: "Oshi",
     surface: "#120f11",
-    brand: "#e0263f",
-    mode: "dark",
-  },
-  {
-    key: "high-contrast",
-    label: "High Contrast",
-    surface: "#000000",
-    brand: "#ffffff",
+    brand: "#74c0fc",
     mode: "dark",
   },
   {
