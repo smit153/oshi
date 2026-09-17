@@ -12,7 +12,7 @@ something.
 
 ## Demo
 
-https://github.com/user-attachments/assets/aeda00d9-e2a5-4814-830c-f34db20361cc
+<video src=".github/assets/demo.mp4" controls></video>
 
 ## Features
 
@@ -29,8 +29,6 @@ https://github.com/user-attachments/assets/aeda00d9-e2a5-4814-830c-f34db20361cc
 - **Leaderboards** — compare your solution against others
 
 ## Editor
-
-https://github.com/user-attachments/assets/c1c1c2fd-defb-48a7-9622-1df74779787e
 
 The built-in editor lets you create puzzles from scratch or generate random
 solvable boards with configurable minimum moves. A debounced solver runs on every
