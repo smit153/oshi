@@ -1,18 +1,23 @@
-# Oshi (押し)
+<div align="center">
 
-A sliding-piece puzzle game inspired by
-[Ricochet Robots](https://en.wikipedia.org/wiki/Ricochet_Robots).
+# ＯＳＨＩ　押し
 
-Guide the puck to its destination - but pieces continue until they hit
-something.
+**Slide the puck to the target. Fewest moves wins.**
 
-*Oshi* (押し) means "push" in Japanese.
+[![Deno](https://img.shields.io/badge/deno-2.x-000000?logo=deno&logoColor=white)](https://deno.land)
+[![Fresh](https://img.shields.io/badge/fresh-2-2563eb)](https://fresh.deno.dev)
+[![Preact](https://img.shields.io/badge/preact-10-673ab8?logo=preact&logoColor=white)](https://preactjs.com)
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+*"Push" in Japanese. A Ricochet-Robots-inspired sliding puzzle that works
+fully server-side, no JavaScript required.*
 
 **[Play it now](https://oshi.blue153.deno.net/)**
 
-## Demo
+https://github.com/user-attachments/assets/a2dfc731-cbcd-4447-8e4a-76cd5f1f22f0
 
-<video src="https://raw.githubusercontent.com/smit153/oshi/main/.github/assets/demo.mp4" controls></video>
+</div>
 
 ## Features
 
@@ -105,12 +110,6 @@ The easiest way to create a puzzle is via the in-app editor at `/puzzles/new`.
 Design your board, then click **Download** to save the `.md` file. Use
 **Import** to load it back into the editor later. Place it in
 `static/puzzles/` and run `deno task update-puzzles` to register it.
-
-## Privacy
-
-This site uses [PostHog](https://posthog.com) for product analytics.
-Tracking is **opt-in** — no data is collected until you accept via the cookie banner.
-Data is processed by posthog in the eu, and not shared with other third parties.
 
 ## License
 
